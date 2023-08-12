@@ -3,7 +3,7 @@
 ## TACH STACK
 
 - React 18.2.0
-- Redux
+- Redux 4.2.1
 - TypeScript 4.9.5
 - CSS3
 - HTML5
@@ -14,7 +14,7 @@
 - npm install redux --save
 - npm run start
 
-## API/SERVER
+## API / SERVER
 
 ## REFERENCE
 
