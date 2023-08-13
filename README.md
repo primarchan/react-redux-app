@@ -10,9 +10,10 @@
 
 ## INSTALLATION
 
-- npx create-react-app ./ --template typescript
-- npm install redux --save
-- npm run start
+- `npx create-react-app ./ --template typescript`
+- `npm install redux --save`
+- `npm run start`
+- `npm install react-redux --save`
 
 ## API / SERVER
 

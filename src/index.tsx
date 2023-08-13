@@ -1,25 +1,35 @@
 import React from "react";
+import { createStore } from "redux";
+import rootReducer from "./reducers";
+import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
-import counter from "./reducers";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const store = createStore(counter);
+const store = createStore(rootReducer);
+store.dispatch({
+  type: "ADD_TODO",
+  text: "USE REDUX",
+});
+
+console.log(">> store.getState() : ", store.getState());
 
 const render = () =>
   root.render(
     <React.StrictMode>
-      <App
-        value={store.getState()}
-        onIncrement={() => store.dispatch({ type: "INCREMENT" })}
-        onDecrement={() => store.dispatch({ type: "DECREMENT" })}
-      />
+      <Provider store={store}>
+        <App
+          value={store.getState()}
+          onIncrement={() => store.dispatch({ type: "INCREMENT" })}
+          onDecrement={() => store.dispatch({ type: "DECREMENT" })}
+        />
+      </Provider>
     </React.StrictMode>
   );
 
