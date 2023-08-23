@@ -1,4 +1,5 @@
 import React from "react";
+import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
@@ -18,7 +19,7 @@ const loggerMiddleware = (store: any) => (next: any) => (action: any) => {
   next(action);
 };
 
-const middleware = applyMiddleware(loggerMiddleware);
+const middleware = applyMiddleware(thunk, loggerMiddleware);
 
 const store = createStore(rootReducer, middleware);
 

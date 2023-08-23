@@ -14,6 +14,8 @@
 - `npm install redux --save`
 - `npm run start`
 - `npm install react-redux --save`
+- `npm install axios --save`
+- `npm install redux-thunk --save`
 
 ## API / SERVER
 
